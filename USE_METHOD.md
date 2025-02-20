@@ -45,5 +45,13 @@ import { UserService } from "@services/user.service";
 import { ButtonComponent } from "@components/button.component";
 ```
 ---
+## 關於yarn
 
+|功能|Yarn| NPM |
+|---|---|-----|
+|速度	|🚀 更快（並行安裝）|🐢 較慢（逐步安裝）|
+|鎖定機制	|✅ yarn.lock 確保版本一致	|✅ package-lock.json 但比 yarn.lock 大|
+|離線模式	|✅ 支援離線安裝	|❌ 需連線下載|
+|可靠性	|✅ yarn 內建校驗機制	⚠️ |npm 可能因網路問題失敗|
+|Monorepo	|✅ 支援 Workspaces|	⚠️ npm 7+ 開始支援|
 
