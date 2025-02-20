@@ -4,14 +4,14 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "@common": ["src/app/common"],
-      "@components": ["src/app/components"],
-      "@core": ["src/app/core"],
-      "@features": ["src/app/features"],
-      "@guards": ["src/app/guards"],
-      "@models": ["src/app/models"],
-      "@pipes": ["src/app/pipes"],
-      "@shared": ["src/app/shared"]
+      "@common": ["./src/app/common"],
+      "@components": ["./src/app/components"],
+      "@core": ["./src/app/core"],
+      "@features": ["./src/app/features"],
+      "@guards": ["./src/app/guards"],
+      "@models": ["./src/app/models"],
+      "@pipes": ["./src/app/pipes"],
+      "@shared": ["./src/app/shared"]
     },
     "outDir": "./dist/out-tsc",
     "strict": true,
