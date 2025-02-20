@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:base_template": "node dist/base_template/server/server.mjs",
-    "clean-git": "python 3 scripts/cleanup.py"
+    "clean-git": "python 3 scripts/cleanup.py",
+    "format": "prettier --write ."
   },
   "private": true,
   "dependencies": {
