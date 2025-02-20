@@ -18,6 +18,8 @@ rm -rf .git
 ````javascript
 git init
 ````
+3-1. 或執行`yarn clean-git`
+
 --------
 ## 設定調整簡介
 ### angular.json
