@@ -1,13 +1,14 @@
 import os
+import shutil
 import subprocess
 
 def clean_git():
-    """刪除 .git 目錄並重新初始化 Git"""
+    """刪除 .git 目錄並重新初始化 Git（跨平台支援）"""
 
     # 確保當前目錄存在 .git
     if os.path.exists(".git"):
         print("🔄 正在刪除 `.git` 目錄...")
-        subprocess.run(["rm", "-rf", ".git"], check=True)
+        shutil.rmtree(".git")  # ✅ 跨平台刪除資料夾
         print("✅ `.git` 目錄已刪除")
     else:
         print("⚠ `.git` 目錄不存在，跳過刪除")
@@ -30,6 +31,3 @@ def clean_git():
 
 if __name__ == "__main__":
     clean_git()
-
-
-
