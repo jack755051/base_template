@@ -1,59 +1,88 @@
-## 複製基底
-3. Clone 這個 Angular 模板
-```javascript=1
-// ssh
-git clone git@github.com:jack755051/base_template.git
- // https
-https://github.com/jack755051/base_template.git
-```
-2. 進入新專案資料夾
-```javascript
-cd my-new-project
-```
-3. 刪除 .git 目錄
-```javascript
-rm -rf .git
-```
-4. 重新初始化 Git
-````javascript
-git init
-````
-3-1. 或執行`yarn clean-git`
+## Clone Base_Template
 
---------
-## 設定調整簡介
-### angular.json
-- prefix：
-  - 組件生成前綴
-- assets： 
-  - 負責靜態資源會將指定檔案夾複製到`/dist`。
-  - 不會自動載入(需要手動`src="/public/xxx"`)到應用程式。
-  - 簡化圖片調用路徑。
-  - 與`src/assets`不同，`src/assets`是開發時的靜態檔案夾。
-  - 需將開發時的靜態圖像資料夾加入`angular.json`的`assets`
-- styles：
-  - 負責全域樣式
-  - 可以設定多個scss/css，會依照順序載入
+### Using the Base Method
 
-### tsconfig.json
-- path 設定import別名
-```javascript
-  "paths": {
-    "@services/*": ["src/app/services/*"],
-    "@components/*": ["src/app/components/*"]
-  }
+1. Clone the repository:
+   ```bash
+   # Using SSH
+   git clone git@github.com:jack755051/base_template.git
 
-import { UserService } from "@services/user.service";
-import { ButtonComponent } from "@components/button.component";
-```
+   # Using HTTPS
+   git clone https://github.com/jack755051/base_template.git
+   ```
+
+2. Enter your project folder:
+   ```bash
+   cd my-new-project
+   ```
+
+3. Remove the existing `.git` directory:
+   ```bash
+   rm -rf .git
+   ```
+
+4. Initialize a new Git repository:
+   ```bash
+   git init
+   ```
+
 ---
-## 關於yarn
 
-|功能|Yarn| NPM |
-|---|---|-----|
-|速度	|🚀 更快（並行安裝）|🐢 較慢（逐步安裝）|
-|鎖定機制	|✅ yarn.lock 確保版本一致	|✅ package-lock.json 但比 yarn.lock 大|
-|離線模式	|✅ 支援離線安裝	|❌ 需連線下載|
-|可靠性	|✅ yarn 內建校驗機制	⚠️ |npm 可能因網路問題失敗|
-|Monorepo	|✅ 支援 Workspaces|	⚠️ npm 7+ 開始支援|
+### Execute `init.sh`
 
+1. Open your terminal and run:
+   ```bash
+   ./init.sh
+   ```
+
+---
+
+## Project Configuration Overview
+
+### `angular.json`
+
+- **prefix**  
+  Defines the prefix used when generating Angular components.
+
+- **assets**  
+  - Specifies static files to be copied to the `/dist` folder during build.  
+  - Files are **not automatically loaded**—you must manually include them, e.g., `src="/public/xxx"`.  
+  - Simplifies image referencing paths.  
+  - Unlike `src/assets`, which is used for static files during development.  
+  - Be sure to include your development image folders in the `assets` section of `angular.json`.
+
+- **styles**  
+  - Defines global styles.  
+  - Supports multiple SCSS/CSS files which will be loaded in the specified order.
+
+---
+
+### `tsconfig.json`
+
+- Configure path aliases using the `paths` option:
+
+   ```json
+   "paths": {
+     "@services/*": ["src/app/services/*"],
+     "@components/*": ["src/app/components/*"]
+   }
+   ```
+
+   Example usage:
+
+   ```ts
+   import { UserService } from "@services/user.service";
+   import { ButtonComponent } from "@components/button.component";
+   ```
+
+---
+
+## About Yarn
+
+| Feature         | Yarn                                | NPM                                 |
+|----------------|-------------------------------------|-------------------------------------|
+| Speed          | 🚀 Faster (parallel installation)    | 🐢 Slower (sequential installation) |
+| Lock Mechanism | ✅ `yarn.lock` ensures consistent versions | ✅ `package-lock.json`, usually larger |
+| Offline Mode   | ✅ Supports offline installation     | ❌ Requires network access          |
+| Reliability    | ✅ Built-in integrity checks         | ⚠️ May fail due to network issues   |
+| Monorepo       | ✅ Supports Workspaces               | ⚠️ Supported starting from NPM 7+   |
